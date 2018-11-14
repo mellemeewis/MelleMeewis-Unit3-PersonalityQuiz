@@ -119,13 +119,10 @@ class QuestionViewController: UIViewController {
     
     func nextQuestion() {
         questionIndex += 1
-        print("hi")
         if questionIndex < questions.count {
-            print("hello")
             updateUI()
         }
         else {
-            print("else")
             performSegue(withIdentifier: "ResultsSegue", sender: nil)
         }
     }
@@ -144,14 +141,10 @@ class QuestionViewController: UIViewController {
         questionLabel.text = currentQuestion.text
         progressView.setProgress(totalProgres, animated: true)
         
-        print("hai")
-        
-        
         switch currentQuestion.type {
         case .multiple:
             updateMultipleStack(using: currentAnswers)
         case .range:
-            print("jooojo")
             updateRange(using: currentAnswers)
         case .single:
             updateSingleStack(using: currentAnswers)
